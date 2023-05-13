@@ -78,6 +78,7 @@ function App() {
         <Route exact path="/posts/:id" component={PostDetails} />
         <Route exact path="/category-list" component={CategoryList} />
         {/* <Route exact path="/" component={HomePage} /> */}
+        <Route exact path="/" component={PostsList} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
       </Switch>

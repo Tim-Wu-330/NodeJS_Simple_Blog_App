@@ -9,9 +9,8 @@ import {
 import { PlusIcon } from "@heroicons/react/solid";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
   { name: "Create", href: "/create-post", current: false },
-  { name: "Posts", href: "/posts", current: false },
+  { name: "Posts", href: "/posts", current: true },
   { name: "Register", href: "/register", current: false },
   { name: "Login", href: "/login", current: false },
 ];
@@ -44,19 +43,22 @@ const PublicNavbar = () => {
                   <BookOpenIcon className="h-10 w-10 text-yellow-200" />
                 </div>
                 <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-                  {navigation.map(item => (
+                  {navigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
+                      onClick={() => (item.clicked = true)}
                       className={classNames(
                         item.current
                           ? "bg-gray-900 text-white"
                           : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                        "px-3 py-2 rounded-md text-sm font-medium"
+                        "px-3 py-2 rounded-md text-sm font-medium",
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
+                      {(item.clicked = false)}
+                      {(item.current = item.clicked == true ? true : false)}
                     </Link>
                   ))}
                 </div>
@@ -93,7 +95,7 @@ const PublicNavbar = () => {
 
           <Disclosure.Panel className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navigation.map(item => (
+              {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -101,7 +103,7 @@ const PublicNavbar = () => {
                     item.current
                       ? "bg-gray-900 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block px-3 py-2 rounded-md text-base font-medium"
+                    "block px-3 py-2 rounded-md text-base font-medium",
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >

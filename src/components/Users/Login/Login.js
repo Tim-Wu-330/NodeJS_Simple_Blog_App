@@ -35,11 +35,11 @@ const Login = () => {
     <>
       <section className="min-h-screen relative py-20 2xl:py-40 bg-gray-900 overflow-hidden">
         <div className="absolute top-0 left-0 lg:bottom-0 h-full lg:h-auto w-full lg:w-4/12 bg-violet-500 lg:overflow-hidden">
-          <img
+          {/* <img
             className="hidden lg:block h-full w-full object-cover"
             src={poster}
             alt=""
-          />
+          /> */}
         </div>
         <div className="relative container px-4 mx-auto">
           <div className="max-w-5xl mx-auto">
@@ -153,7 +153,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-3/5 px-4 mb-16 lg:mb-0 order-first lg:order-last">
+              {/* <div className="w-full lg:w-3/5 px-4 mb-16 lg:mb-0 order-first lg:order-last">
                 <span className="flex mb-10 mx-auto items-center justify-center h-20 w-20 bg-blue-500 rounded-lg">
                   <svg
                     width="37"
@@ -197,7 +197,7 @@ const Login = () => {
                 <h2 className="mb-10 text-center text-6xl lg:text-7xl text-gray-300 font-bold font-heading">
                   Ready to start? Login Now.
                 </h2>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

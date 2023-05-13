@@ -15,7 +15,6 @@ import { PlusIcon } from "@heroicons/react/solid";
 import { logoutAction } from "../../../redux/slices/users/usersSlices";
 
 const navigation = [
-  // { name: "Home", href: "/", current: true },
   { name: "Create", href: "/create-post", current: false },
   { name: "Posts", href: "/posts", current: true },
   { name: "Authors", href: "/users", current: false },

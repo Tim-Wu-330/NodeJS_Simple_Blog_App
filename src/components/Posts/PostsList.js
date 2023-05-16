@@ -221,7 +221,7 @@ export default function PostsList() {
             </div>
           </div>
         </div>
-        <div className="bg-gray-900">
+        {/* <div className="bg-gray-900">
           <div class="skew bg-green-500 skew-bottom mr-for-radius">
             <svg
               class="h-8 md:h-12 lg:h-10 w-full text-gray-900"
@@ -240,7 +240,7 @@ export default function PostsList() {
               <polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
             </svg>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

@@ -10,7 +10,7 @@ import DateFormatter from "../../utils/DateFormatter";
 import LoadingComponent from "../../utils/LoadingComponent";
 import AddComment from "../Comments/AddComment";
 import CommentsList from "../Comments/CommentsList";
-import PostContentStyleFormatter from "./PostContentStyleFormatter";
+// import PostContentStyleFormatter from "./PostContentStyleFormatter";
 
 const PostDetails = ({
   match: {
@@ -24,8 +24,6 @@ const PostDetails = ({
   //comment
   const comment = useSelector((state) => state.comment);
   const { commentCreated, commentDeleted } = comment;
-  // console.log(comment);
-  // console.log(commentCreated);
   useEffect(() => {
     dispatch(fetchPostDetailsAction(id));
   }, [id, dispatch, commentCreated, commentDeleted]);
@@ -89,9 +87,7 @@ const PostDetails = ({
               {/* Post description */}
               <div class="max-w-4xl mx-auto">
                 <p class="mb-6 text-left  text-2xl text-gray-200">
-                  <PostContentStyleFormatter
-                    fullText={postDetails?.description}
-                  />
+                  {postDetails?.description}
                   {/* Show delete and update  if it was created by the user */}
                   {isCreatedBy ? (
                     <p class="flex">

@@ -19,12 +19,17 @@ const CategoryDropDown = (props) => {
   const category = useSelector((state) => state?.category);
   const { categoryList, loading, appErr, serverErr } = category;
   // console.log(categoryList);
-  const allCategories = categoryList?.map((category) => {
-    return {
-      label: category?.title,
-      value: category?._id,
-    };
-  });
+  let allCategories = null;
+  // in order to prevent categoryList is empty when executing map function for categoryList, we need to make sure that
+  // the categoryList property is loaded before use map to iterate it.
+  if (categoryList) {
+    allCategories = categoryList?.map((category) => {
+      return {
+        label: category?.title,
+        value: category?._id,
+      };
+    });
+  }
 
   //handleChange
   const handleChange = (value) => {

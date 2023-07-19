@@ -5,15 +5,12 @@ import { Redirect, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LockClosedIcon } from "@heroicons/react/solid";
 import { passwordResetAction } from "../../../redux/slices/users/usersSlices";
-
 //Form schema
 const formSchema = Yup.object({
   password: Yup.string().required("Password is required"),
 });
-
 const ResetPassword = (props) => {
   const token = props.match.params.token;
-
   const dispatch = useDispatch();
   //formik
   const formik = useFormik({
@@ -30,11 +27,9 @@ const ResetPassword = (props) => {
     },
     validationSchema: formSchema,
   });
-
   //select data from store
   const users = useSelector((state) => state?.users);
   const { passwordReset, loading, appErr, serverErr } = users;
-
   // useEffect(() => {}, []) the call back will be executed one time when the component is mounted
   //Redirect,  useEffect will keep monitoring the status of the binded properties like passwordReset, when its properties are changed, the callback will be called automatically
   useEffect(() => {
@@ -42,7 +37,6 @@ const ResetPassword = (props) => {
       if (passwordReset) props.history.push("/login");
     }, 5000);
   }, [passwordReset]);
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">

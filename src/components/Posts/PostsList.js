@@ -27,7 +27,10 @@ export default function PostsList() {
     appErr: catAppErr,
     serverErr: catServerErr,
   } = category;
-
+  const trimText = (text) => {
+    if (text.length <= 80) return text;
+    return text.substring(0, 80) + "... ";
+  }
   //fetch post
   //由于MongoDB关系模式设计里 comment 指向post 绑在Post里的comments有变化 会导致页面重新渲染
   useEffect(() => {
@@ -174,7 +177,7 @@ export default function PostsList() {
                             {post?.title}
                           </h3>
                         </Link>
-                        <p className="text-gray-300">{post?.description}</p>
+                        <p className="text-gray-300">{trimText(post?.description)}</p>
                         {/* Read more */}
                         <Link
                           to={`/posts/${post?._id}`}
